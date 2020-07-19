@@ -99,16 +99,15 @@ public class TaskManager {
     }
 
     public static void goDeleteTask(String[][] tab, int num) {
-        try {
-
+        if (num < tab.length && num >= 0) {
             toDo = ArrayUtils.remove(tab, num);
             System.out.println("task removed");
-
-        } catch (IndexOutOfBoundsException ex) {
+        } else {
             System.out.println("Element not exist in tab");
+            goDeleteTask(toDo, taskNum());
         }
-
     }
+
 
     public static void showList(String[][] tab) {
         for (int i = 0; i < tab.length; i++) {
