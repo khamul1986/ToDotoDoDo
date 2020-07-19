@@ -28,7 +28,6 @@ public class TaskManager {
                     break;
                 case "remove":
                     goDeleteTask(toDo, taskNum());
-                    System.out.println("task removed");
                     break;
                 case "list":
                     showList(toDo);
@@ -94,11 +93,8 @@ public class TaskManager {
         String str = scan.nextLine();
         if (NumberUtils.isParsable(str)){
             return Integer.parseInt(str);
-        }else {
-            System.out.println("Not a correct number");
-            System.out.println("Select correct number");
-
-        }return -1;
+        }
+        return -1;
 
     }
 
@@ -106,13 +102,10 @@ public class TaskManager {
         try {
 
             toDo = ArrayUtils.remove(tab, num);
+            System.out.println("task removed");
 
         } catch (IndexOutOfBoundsException ex) {
             System.out.println("Element not exist in tab");
-            System.out.println("Select existing number");
-            showList(tab);
-            goDeleteTask(toDo, taskNum());
-
         }
 
     }
