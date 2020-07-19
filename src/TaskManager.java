@@ -97,7 +97,7 @@ public class TaskManager {
         }else {
             System.out.println("Not a correct number");
             System.out.println("Select correct number");
-            scan.nextLine();
+
         }return -1;
 
     }
