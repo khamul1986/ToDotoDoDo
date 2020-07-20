@@ -96,20 +96,6 @@ public class TaskManager {
         }
         return -1;
 
-        /* wariant drugi, ładniejszy
- public static int taskNum() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Select the  task number to remove it");
-        String str = scan.nextLine();
-        if (!correctNum(str)) {
-            System.out.println("Not a correct number");
-            System.out.println("Select correct number");
-            str = scan.nextLine();
-        }
-        return Integer.parseInt(str);
-    }
-
- */
     }
 
     public static void goDeleteTask(String[][] tab, int num) {
@@ -117,7 +103,7 @@ public class TaskManager {
             toDo = ArrayUtils.remove(tab, num);
             System.out.println("task removed");
         } else {
-            System.out.println("Element not existing in tab");
+            System.out.println("Element not exist in tab");
             goDeleteTask(toDo, taskNum());
         }
     }
